@@ -58,28 +58,17 @@
 // cervezas(beers, cerveza);
 
 // //7
-// let ibuAbuscar = parseInt(prompt("Cual es tu ibu favorita?"))
-// // let buscarPorIbu = (beers,ibu) => {
-// //     beers.forEach(beer => {
-// //         if(beer.ibu == ibu){
-// //             console.log(beer);
-// //         }else console.log(`No hay cerveza con un ibu de valor ${ibu}` );
-// //     });
-
-// // }
 
 
-let buscarPorIbu = (beers,ibu) => {
-    let beerEncontrada = beers.find(beer => beer.ibu == ibu);
-    if(beerEncontrada){
-        console.log(beerEncontrada);
-    }else console.log(`No hay cerveza con un ibu de valor ${ibu}` );
-}
 
-// // let buscarPorIbus = (beers,ibu) => beers.find(beer => beer.ibu == ibu)
-// // if(buscarPorIbus(beers,ibuAbuscar)){
-// //     console.log(buscarPorIbus(beers,ibuAbuscar));
-// // }else console.log(`No hay cerveza con un ibu de valor ${ibuAbuscar}` );
+// let buscarPorIbu = (beers,ibu) => {
+//     let beerEncontrada = beers.find(beer => beer.ibu == ibu);
+//     if(beerEncontrada){
+//         console.log(beerEncontrada);
+//     }else console.log(`No hay cerveza con un ibu de valor ${ibu}` );
+// }
+
+
 
 // buscarPorIbu(beers,ibuAbuscar)
 // buscarPorIbus(beers,ibuAbuscar)
@@ -105,31 +94,31 @@ let buscarPorIbu = (beers,ibu) => {
 
 // console.log(filtrarPorAlchohol(beers, 6));
 //10
-// function ordenarCervezas(cervezas, propiedad, ascendente) {
-//     // Paso 1: Obtener solo las primeras 10 cervezas
-//     const primerasDiezCervezas = cervezas.slice(0, 10);
-  
-//     // Paso 2: Ordenar las cervezas en función de la propiedad y el orden
-//     primerasDiezCervezas.sort((a, b) => {
-//       if (ascendente) {
-//         return a[propiedad] > b[propiedad] ? 1 : -1;
-//       } else {
-//         return a[propiedad] < b[propiedad] ? 1 : -1;
-//       }
-//     });
-  
-//     // Paso 3: Devolver la matriz ordenada
-//     return primerasDiezCervezas;
-//   }
-  
-//   // Ejemplo de uso
- 
-//   const resultado = ordenarCervezas(beers, 'precio', true);
-//   console.log(resultado);
+// es verdadera o descendente si es falsa.
+// let beersOrdered = (arrayBeers, property, boolean) => {
+//     let ordered = arrayBeers
+//         .filter((beer) => beer[property])
+//         .toSorted((a, b) => {
+//             if (a[property] < b[property]) {
+//                 return -1;
+//             } else if (a[property] > b[property]) {
+//                 return 1;
+//             }
+//             return 0;
+//         });
+
+//     if (boolean) {
+//         return ordered.slice(0, 10);
+//     }
+//     return ordered.reverse().slice(0, 10);
+// };
+
+// console.log(beersOrdered(beers, "abv", true));
+// console.log(beersOrdered(beers, "abv", false));
+
 
 // //11 
 // function renderizarTablaCervezas(beers, elementoId) {
-//     // Paso 1: Obtener el elemento HTML por su ID
 //     const contenedor = document.getElementById(elementoId);
     
 //     // Verificar si el contenedor existe
@@ -138,7 +127,6 @@ let buscarPorIbu = (beers,ibu) => {
 //       return;
 //     }
   
-//     // Paso 2: Crear la tabla y sus encabezados
 //     const tabla = document.createElement('table');
 //     tabla.innerHTML = `
 //       <thead>
@@ -152,7 +140,6 @@ let buscarPorIbu = (beers,ibu) => {
 //       </tbody>
 //     `;
   
-//     // Paso 3: Iterar sobre la matriz de cervezas y crear filas
 //     cervezas.forEach(cerveza => {
 //       const fila = document.createElement('tr');
 //       fila.innerHTML = `
@@ -163,21 +150,14 @@ let buscarPorIbu = (beers,ibu) => {
 //       tabla.querySelector('tbody').appendChild(fila);
 //     });
   
-//     // Paso 4: Insertar la tabla en el contenedor
 //     contenedor.innerHTML = '';  // Limpiar cualquier contenido previo
 //     contenedor.appendChild(tabla);
 //   }
   
 //   // Ejemplo de uso
-//   const cervezas = [
-//     { nombre: 'Cerveza A', abv: 5.0, ibu: 20 },
-//     { nombre: 'Cerveza B', abv: 4.5, ibu: 30 },
-//     { nombre: 'Cerveza C', abv: 6.0, ibu: 25 },
-//     // Agrega más cervezas según sea necesario
-//   ];
+//   
   
-//   // Asegúrate de tener un elemento con el ID 'tabla-cervezas' en tu HTML
 //   document.addEventListener('DOMContentLoaded', () => {
-//     renderizarTablaCervezas(cervezas, 'tabla-cervezas');
+//     renderizarTablaCervezas(beers, 'tabla-cervezas');
 //   });
   
