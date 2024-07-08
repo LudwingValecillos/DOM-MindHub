@@ -23,15 +23,16 @@ titulo.textContent = tituloPrincipal;
 
 //3. Capturar el header y el footer, mediante la misma clase, y cambiarles el color a naranja. 
 let headerAndFooter = document.getElementsByClassName("color");
-headerAndFooter[0].style.backgroundColor = "orange";
-headerAndFooter[1].style.backgroundColor = "orange";
+for (let i = 0; i < headerAndFooter.length; i++) {
+    headerAndFooter[i].style.backgroundColor = "orange";
+    
+}
 
 // //--4 Capturar y modificar el p del footer, agregarle tu nombre completo y cohort. 
 
 
-//1ra forma de hacerlo:
 let parrafo = document.querySelector("footer p");
-parrafo.innerHTML = " Ludwing  MindHub cohort 54";
+parrafo.innerText = " Ludwing  MindHub cohort 54";
 
 
 //--5.Crear un div dentro del main y agregarle el id "contenedor". Capturar ese div por medio de su id.;
@@ -63,14 +64,21 @@ function crearCard(frutas) {
     }
     return cardsHTML
 }
+
 let crearcards = crearCard(frutas);
 console.log(crearcards);
 divCreado.innerHTML = crearcards;
 
 //9
+const crearH2 = document.createElement('h2');
+crearH2.textContent = 'Frutas Dulces';
+crearH2.classList.add('text-3xl', 'text-center', 'py-4');
+main.appendChild(crearH2);
+
 let listaDiv = document.createElement('div');
 listaDiv.id = 'lista';
-listaDiv.classList.add();
+
+
 
 main.appendChild(listaDiv);
 let listaCreada = document.getElementById("lista");
@@ -82,6 +90,7 @@ function listarFrutasDulces(frutas) {
     frutas.forEach(fruta => {
         if(fruta.esDulce){
             let item = document.createElement('li');
+            item.classList.add("list-disc");
             item.textContent = fruta.nombre;
             lista.appendChild(item);
         }
@@ -93,5 +102,6 @@ let listaContainer = document.getElementById('lista');
 let frutasDulces = frutas.filter(fruta => fruta.esDulce);
 listaContainer.appendChild(listarFrutasDulces(frutas));
 
-//
-//6
+// 10
+
+
