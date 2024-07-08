@@ -14,6 +14,7 @@
 //1. Capturar el H1, mediante un ID, en una variable llamada "titulo". 
 
 let titulo = document.getElementById("titulo");
+titulo.classList.add("text-3xl", "text-center", "py-4");
 
 //2. Crean una variable "tituloPrincipal" cuyo valor sea "Frutas"
 // y cambiar el contenido del tÃ­tulo por el de esta variable.
